@@ -1,4 +1,4 @@
-# 柔術日記 Instagram 自動投稿
+# BJJ Diary Instagram 自動投稿
 
 日英2アカウントに毎日 JST 21:00 に自動投稿するパイプライン。
 

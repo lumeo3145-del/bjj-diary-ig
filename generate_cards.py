@@ -28,9 +28,9 @@ FADE       = (168, 177, 196)
 HANDLES = {"ja": "@bjj.diary.jp", "en": "@bjj.diary"}
 
 EYEBROWS = {
-    "tips":    {"ja": ("TRAINING TIPS", "柔術日記"), "en": ("TRAINING TIPS", "BJJ DIARY")},
+    "tips":    {"ja": ("TRAINING TIPS", "BJJ DIARY"), "en": ("TRAINING TIPS", "BJJ DIARY")},
     "quote":   {"ja": ("ON THE MATS", "今日の一言"), "en": ("ON THE MATS", "BJJ DIARY")},
-    "feature": {"ja": ("WHY 柔術日記", "アプリのこと"), "en": ("WHY BJJ DIARY", "THE APP")},
+    "feature": {"ja": ("WHY BJJ DIARY", "アプリのこと"), "en": ("WHY BJJ DIARY", "THE APP")},
     "trivia":  {"ja": ("BJJ TRIVIA", "柔術豆知識"), "en": ("BJJ TRIVIA", "BJJ DIARY")},
 }
 
@@ -110,6 +110,8 @@ def fit_size(d, lines, path, start, min_size, max_w):
 def render(entry, lang):
     data = entry[lang]
     ctype = entry.get("type", "tips")
+    if ctype == "mockup":
+        return render_mockup(entry, lang)
     img = weave_texture(Image.new("RGB", (W, H), GI_NAVY))
     d = ImageDraw.Draw(img)
 
@@ -154,6 +156,75 @@ def main():
         for lang in ("ja", "en"):
             if lang in entry:
                 render(entry, lang)
+
+
+
+
+# ===== mockup card =====
+CREAM      = (250, 247, 240)
+RULE_GRAY  = (215, 211, 204)
+MARGIN_RED = (234, 92, 78)
+INK        = (58, 50, 44)
+INK_SOFT   = (135, 126, 117)
+
+ASSET_STYLE = {
+    "tilt_ja_journal": dict(height=1150, cx=810, cy=560, rotate=0),
+    "tilt_ja_drills":  dict(height=1150, cx=810, cy=560, rotate=0),
+    "mock_ja_stats":   dict(height=1020, cx=800, cy=545, rotate=-6),
+    "mock_ja_notes":   dict(height=1020, cx=800, cy=545, rotate=-6),
+    "mock_ja_comp":    dict(height=1020, cx=800, cy=545, rotate=-6),
+    "mock_en_stats":   dict(height=1020, cx=800, cy=545, rotate=-6),
+    "mock_en_notes":   dict(height=1020, cx=800, cy=545, rotate=-6),
+    "mock_en_comp":    dict(height=1020, cx=800, cy=545, rotate=-6),
+}
+
+
+def notebook_bg():
+    img = Image.new("RGB", (W, H), CREAM)
+    d = ImageDraw.Draw(img)
+    for y in range(150, H - 150, 96):
+        d.line([(140, y), (W, y)], fill=RULE_GRAY, width=3)
+    d.line([(120, 0), (120, H)], fill=MARGIN_RED, width=5)
+    return img
+
+
+def paste_phone(img, asset, style):
+    phone = Image.open(f"assets/{asset}.png").convert("RGBA")
+    if style["rotate"]:
+        phone = phone.rotate(style["rotate"], expand=True, resample=Image.BICUBIC)
+    r = style["height"] / phone.height
+    phone = phone.resize((int(phone.width * r), style["height"]), Image.LANCZOS)
+    alpha = phone.split()[3].point(lambda a: int(a * 0.25))
+    sh = Image.new("RGBA", phone.size, (0, 0, 0, 0))
+    sh.putalpha(alpha)
+    x, y = style["cx"] - phone.width // 2, style["cy"] - phone.height // 2
+    img.paste(Image.new("RGB", phone.size, (60, 50, 44)), (x + 14, y + 20), sh)
+    img.paste(phone, (x, y), phone)
+    return img
+
+
+def belt_bar_cream(d, handle):
+    belt_bar(d, handle)  # 同じ帯バー（黒背景なのでクリームでも成立）
+
+
+def render_mockup(entry, lang):
+    data = entry[lang]
+    asset = data["image"]
+    style = ASSET_STYLE[asset]
+    img = notebook_bg()
+    img = paste_phone(img, asset, style)
+    d = ImageDraw.Draw(img)
+    d.text((170, 130), "WHY BJJ DIARY", font=font(SANS_MED, 30), fill=MARGIN_RED)
+    d.rectangle([170, 188, 234, 193], fill=MARGIN_RED)
+    size = fit_size(d, data["headline"], SANS_BLACK, 92, 56, 420)
+    lh = int(size * 1.32)
+    y = multiline(d, data["headline"], font(SANS_BLACK, size), 170, 300, INK, lh)
+    if data.get("sub"):
+        multiline(d, data["sub"], font(SANS_REG, 35), 170, y + 50, INK_SOFT, 54)
+    belt_bar_cream(d, HANDLES[lang])
+    out = f"output/{entry['date']}_{lang}.png"
+    img.save(out)
+    print("generated:", out)
 
 
 if __name__ == "__main__":

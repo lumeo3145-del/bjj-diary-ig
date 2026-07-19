@@ -1,44 +1,214 @@
 [
   {
-    "date": "2026-07-19",
-    "type": "tips",
+    "date": "2026-07-20",
+    "type": "mockup",
     "ja": {
-      "headline": ["記憶は48時間で", "消える。"],
-      "sub": ["スパーで気づいたことは、その日のうちに書く。", "翌週の練習の質が変わります。"],
-      "caption": "練習の学びは想像以上に早く消えます。道場を出る前の3分で記録する習慣を。\n\n#柔術 #ブラジリアン柔術 #bjj #柔術日記 #練習記録"
+      "image": "tilt_ja_journal",
+      "headline": ["練習の記録は、", "全部ここに。"],
+      "sub": ["カレンダーで振り返れば、", "次の課題が見えてくる。"],
+      "caption": "練習した日はカレンダーに残る。BJJ Diaryで振り返れば、次にやるべきことが見えてきます。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
     },
     "en": {
-      "headline": ["Memory fades in", "48 hours."],
-      "sub": ["Write down what you learned in sparring — today.", "Next week's training will thank you."],
-      "caption": "Your mat insights fade faster than you think. Build the 3-minute logging habit.\n\n#bjj #brazilianjiujitsu #jiujitsu #bjjlifestyle #bjjdiary"
+      "image": "mock_en_stats",
+      "headline": ["Watch", "yourself", "improve."],
+      "sub": ["Training days, comps,", "podium rate — logged."],
+      "caption": "BJJ Diary turns your training into data: sessions per month, competition results, podium rate. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-21",
+    "type": "tips",
+    "ja": {
+      "headline": ["技は数より、", "再現性。"],
+      "sub": ["新しい技より、得意技の精度を上げる。", "一本の得意技が試合を決めます。"],
+      "caption": "コレクションより再現性。どんな相手にもかかる一本を磨く方が、10個の中途半端な技より強いです。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["Reps over", "variety."],
+      "sub": ["Sharpen your A-game before adding moves.", "One reliable attack wins matches."],
+      "caption": "Collecting techniques feels good. Drilling one until it works on everyone wins matches.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-22",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_drills",
+      "headline": ["今日やる技を、", "リスト化。"],
+      "sub": ["打ち込みリストにチェック。", "練習の抜け漏れがなくなる。"],
+      "caption": "「今日は何やろう」で練習時間を溶かさない。BJJ Diaryの打ち込みリストで、やるべきドリルをチェックしていくだけ。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["Open. Write.", "3 seconds flat."],
+      "sub": ["No login. No email. No friction.", "Capture it before it fades."],
+      "caption": "BJJ Diary needs no account. Open the app and start writing before you've even changed out of your gi. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-23",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_stats",
+      "headline": ["積み重ねが、", "見える。"],
+      "sub": ["練習日数も試合成績も、", "グラフで一目瞭然。"],
+      "caption": "月別の練習日数、試合成績、入賞率。BJJ Diaryなら積み重ねが数字で見えるから、練習に行くのが楽しくなります。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_comp",
+      "headline": ["Every match,", "remembered."],
+      "sub": ["Belt, division, result —", "your comp history in one place."],
+      "caption": "From your first blue belt match to your latest podium — BJJ Diary keeps your full competition history organized. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-24",
+    "type": "tips",
+    "ja": {
+      "headline": ["スパー後の", "メモは、", "3行でいい。"],
+      "sub": ["効いた技・やられた技・次の課題。", "それだけで翌週が変わります。"],
+      "caption": "完璧な記録はいらない。「効いた技・やられた技・次の課題」の3行だけで、翌週の練習の質が変わります。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["3 lines after", "every roll."],
+      "sub": ["What worked, what got you, what's next.", "That's all it takes."],
+      "caption": "Don't overthink your training log. What worked, what caught you, what to fix — three lines change next week's session.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-25",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_notes",
+      "headline": ["技のコツも、", "質問リストも。"],
+      "sub": ["練習で気づいたことを、", "メモに全部集約。"],
+      "caption": "三角絞めのコツ、先輩に聞きたいこと、買う道具。柔術にまつわるメモを、BJJ Diaryにまとめて。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["Technique tips,", "question lists,", "gear notes."],
+      "sub": ["Everything BJJ,", "in one place."],
+      "caption": "Triangle details, questions for your coach, gear to buy — keep every BJJ note in BJJ Diary. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-26",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_comp",
+      "headline": ["初出場から、", "全試合。"],
+      "sub": ["帯・階級・結果を記録。", "自分の戦歴が一目でわかる。"],
+      "caption": "初めての試合から最新の入賞まで。BJJ Diaryの試合記録で、自分の戦歴をいつでも振り返れます。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_stats",
+      "headline": ["See your", "training", "add up."],
+      "sub": ["Monthly sessions at a glance.", "Consistency you can see."],
+      "caption": "Nine sessions in March. Seven in May. BJJ Diary shows your consistency month by month — and consistency is everything. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-27",
+    "type": "quote",
+    "ja": {
+      "headline": ["「柔術に敗北は", "ない。勝つか、", "学ぶかだ」"],
+      "sub": ["— カーロス・グレイシーJr."],
+      "caption": "負けたスパーほど、学びは多い。今日の一本を明日の糧に。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["\u201cYou win, or", "you learn.\u201d"],
+      "sub": ["— Carlos Gracie Jr."],
+      "caption": "There is no losing on the mats. Every tap teaches something.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-28",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_journal",
+      "headline": ["道場を出る前の、", "3分。"],
+      "sub": ["今日の学びを書き残す。", "それだけで上達が速くなる。"],
+      "caption": "着替えたら、3分だけBJJ Diary。今日のスパーの気づきは、今日のうちに書くのが一番残ります。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_comp",
+      "headline": ["Your comp", "career,", "organized."],
+      "sub": ["Filter by belt, division, weight.", "Every result at your fingertips."],
+      "caption": "Which division did you win at blue belt? BJJ Diary answers instantly — filter your full competition history by belt, category, and weight. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-29",
+    "type": "tips",
+    "ja": {
+      "headline": ["白帯はまず、", "逃げ方から。"],
+      "sub": ["エスケープが上手い人は潰れない。", "守れるから、挑戦できる。"],
+      "caption": "サブミッションより先にエスケープ。悪い体勢から逃げられる自信があれば、思い切って攻められるようになります。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["Escapes first,", "submissions later."],
+      "sub": ["Good defense means no panic.", "Safety is what lets you attack."],
+      "caption": "Learn to escape before you learn to finish. When bad positions stop scaring you, you start taking real risks.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-30",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_drills",
+      "headline": ["課題は、", "次の練習へ。"],
+      "sub": ["スパーで見つけた弱点を、", "打ち込みリストに追加。"],
+      "caption": "「デラヒーバの対処を聞く」「マウントエスケープの練習」。スパーで見つけた課題をBJJ Diaryのリストに入れておけば、次の練習で必ず消化できます。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["Notes that", "survive the", "drive home."],
+      "sub": ["That detail your coach showed you?", "Still there tomorrow."],
+      "caption": "The detail your coach showed you tonight will be gone by morning — unless you write it down. BJJ Diary keeps it. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-07-31",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_stats",
+      "headline": ["入賞率も、", "自動で計算。"],
+      "sub": ["出場・優勝・準優勝・3位。", "登録するだけで集計される。"],
+      "caption": "試合結果を登録するだけで、出場数や入賞率をBJJ Diaryが自動集計。次の目標が立てやすくなります。App Storeで無料配信中 – プロフィールのリンクから\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "image": "mock_en_stats",
+      "headline": ["Podium rate:", "calculated", "for you."],
+      "sub": ["Log your results.", "BJJ Diary does the math."],
+      "caption": "Enter your comp results and BJJ Diary handles the rest — entries, medals, podium rate. Goal-setting gets a lot easier with numbers. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+    }
+  },
+  {
+    "date": "2026-08-01",
+    "type": "tips",
+    "ja": {
+      "headline": ["質問は、", "その日のうちに。"],
+      "sub": ["疑問をメモして、次の練習で先生に。", "聞ける人が一番伸びます。"],
+      "caption": "スパー中の「なんで抜けられたんだろう？」は最高の教材。メモしておいて、次の練習で先生や上級者に聞いてみましょう。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["Ask your coach", "today, not later."],
+      "sub": ["Note your questions mid-session.", "Curious grapplers improve fastest."],
+      "caption": "\u201cWhy did that escape work on me?\u201d is your best study material. Write it down and ask your coach next session.\n\n#bjj #grappling #jiujitsu #gi #nogi"
     }
   },
   {
     "date": "2026-08-02",
     "type": "quote",
     "ja": {
-      "headline": ["「黒帯とは、", "辞めなかった", "白帯のことだ」"],
+      "headline": ["「マットは", "嘘をつかない」"],
       "sub": ["— 柔術の格言"],
-      "caption": "続けることがすべて。今日も一歩ずつ。\n\n#柔術 #bjj #柔術日記 #格言"
+      "caption": "練習した分だけ、スパーに出る。ごまかしが効かないから、柔術は面白い。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
     },
     "en": {
-      "headline": ["\u201cA black belt is a", "white belt who", "never quit.\u201d"],
+      "headline": ["\u201cThe mat", "doesn't lie.\u201d"],
       "sub": ["— BJJ proverb"],
-      "caption": "Consistency beats talent. Keep showing up.\n\n#bjj #brazilianjiujitsu #bjjquotes #bjjdiary"
-    }
-  },
-  {
-    "date": "2026-08-03",
-    "type": "feature",
-    "ja": {
-      "headline": ["登録不要。", "開いた瞬間、", "書ける。"],
-      "sub": ["メールアドレスもパスワードもいらない練習ノート。", "道場を出る前の3分で、今日の学びを残そう。"],
-      "caption": "柔術日記はアカウント登録なしですぐ使えます。App Storeで「柔術日記」を検索。\n\n#柔術 #bjj #柔術日記 #練習ノート"
-    },
-    "en": {
-      "headline": ["No sign-up.", "Open it,", "start writing."],
-      "sub": ["A training log with no email, no password.", "Capture today's lessons before you leave the gym."],
-      "caption": "BJJ Diary works instantly — no account needed. Search \"BJJ Diary\" on the App Store.\n\n#bjj #brazilianjiujitsu #bjjapp #traininglog"
+      "caption": "Your rolls show exactly how you've trained. No shortcuts, no faking it — that's the beauty of jiu-jitsu.\n\n#bjj #grappling #jiujitsu #gi #nogi"
     }
   }
 ]
