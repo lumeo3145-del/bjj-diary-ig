@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-07-19",
+    "type": "tips",
+    "ja": {
+      "headline": ["記憶は48時間で", "消える。"],
+      "sub": ["スパーで気づいたことは、その日のうちに書く。", "翌週の練習の質が変わります。"],
+      "caption": "練習の学びは想像以上に早く消えます。道場を出る前の3分で記録する習慣を。\n\n#柔術 #ブラジリアン柔術 #bjj #柔術日記 #練習記録"
+    },
+    "en": {
+      "headline": ["Memory fades in", "48 hours."],
+      "sub": ["Write down what you learned in sparring — today.", "Next week's training will thank you."],
+      "caption": "Your mat insights fade faster than you think. Build the 3-minute logging habit.\n\n#bjj #brazilianjiujitsu #jiujitsu #bjjlifestyle #bjjdiary"
+    }
+  },
+  {
+    "date": "2026-08-02",
+    "type": "quote",
+    "ja": {
+      "headline": ["「黒帯とは、", "辞めなかった", "白帯のことだ」"],
+      "sub": ["— 柔術の格言"],
+      "caption": "続けることがすべて。今日も一歩ずつ。\n\n#柔術 #bjj #柔術日記 #格言"
+    },
+    "en": {
+      "headline": ["\u201cA black belt is a", "white belt who", "never quit.\u201d"],
+      "sub": ["— BJJ proverb"],
+      "caption": "Consistency beats talent. Keep showing up.\n\n#bjj #brazilianjiujitsu #bjjquotes #bjjdiary"
+    }
+  },
+  {
+    "date": "2026-08-03",
+    "type": "feature",
+    "ja": {
+      "headline": ["登録不要。", "開いた瞬間、", "書ける。"],
+      "sub": ["メールアドレスもパスワードもいらない練習ノート。", "道場を出る前の3分で、今日の学びを残そう。"],
+      "caption": "柔術日記はアカウント登録なしですぐ使えます。App Storeで「柔術日記」を検索。\n\n#柔術 #bjj #柔術日記 #練習ノート"
+    },
+    "en": {
+      "headline": ["No sign-up.", "Open it,", "start writing."],
+      "sub": ["A training log with no email, no password.", "Capture today's lessons before you leave the gym."],
+      "caption": "BJJ Diary works instantly — no account needed. Search \"BJJ Diary\" on the App Store.\n\n#bjj #brazilianjiujitsu #bjjapp #traininglog"
+    }
+  }
+]
