@@ -101,11 +101,23 @@ def publish(ig_user_id, image_url, caption, token):
     cid = c["id"]
     if not wait_ready(cid, token):
         raise RuntimeError(f"コンテナの処理が完了しませんでした: {cid}")
-    r = api_post(f"{ig_user_id}/media_publish", {
-        "creation_id": cid,
-        "access_token": token,
-    })
-    return r["id"]
+
+    # FINISHED でも公開直後は 9007 / 2207027 が返ることがあるためリトライ
+    last_err = None
+    for attempt in range(6):
+        try:
+            r = api_post(f"{ig_user_id}/media_publish", {
+                "creation_id": cid,
+                "access_token": token,
+            })
+            return r["id"]
+        except RuntimeError as e:
+            last_err = e
+            if "9007" not in str(e) and "2207027" not in str(e):
+                raise
+            print(f"  publish待機中... ({attempt + 1}/6)")
+            time.sleep(15)
+    raise last_err
 
 
 def load_json(path, default):
@@ -126,15 +138,7 @@ def main():
     queue = load_json(QUEUE_PATH, [])
     posted = load_json(POSTED_PATH, {})
 
-    # 二重投稿ガード
-    last = posted.get("_last_post_at")
-    if last:
-        elapsed = (now - datetime.datetime.fromisoformat(last)).total_seconds() / 3600
-        if elapsed < MIN_HOURS_BETWEEN_POSTS:
-            print(f"skip: {elapsed:.1f}時間前に投稿済み（{MIN_HOURS_BETWEEN_POSTS}時間以内）")
-            return
-
-    # 未投稿で最古のエントリ（今日以前のもの）を選ぶ
+    # 未投稿（または片方だけ投稿済み）で最古のエントリを選ぶ
     target = None
     for e in sorted(queue, key=lambda x: x["date"]):
         if e["date"] > today:
@@ -146,6 +150,17 @@ def main():
     if target is None:
         print(f"投稿対象なし（today={today}）。queueが尽きた可能性があります。")
         return
+
+    # 二重投稿ガード（ただし片方だけ投稿済みのエントリは、残りを完了させる）
+    partial = any(f"{target['date']}_{l}" in posted for l in ("ja", "en") if l in target)
+    last = posted.get("_last_post_at")
+    if last and not partial:
+        elapsed = (now - datetime.datetime.fromisoformat(last)).total_seconds() / 3600
+        if elapsed < MIN_HOURS_BETWEEN_POSTS:
+            print(f"skip: {elapsed:.1f}時間前に投稿済み（{MIN_HOURS_BETWEEN_POSTS}時間以内）")
+            return
+    if partial:
+        print(f"※ {target['date']} は片方のみ投稿済み。残りを投稿します")
 
     if target["date"] != today:
         print(f"※ {target['date']} の未投稿分を追いつき投稿します（today={today}）")
