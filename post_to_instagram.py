@@ -1,44 +1,86 @@
 # -*- coding: utf-8 -*-
 """
-今日の分を Instagram Graph API で日英2アカウントに投稿する。
-GitHub Actions から毎日 JST 21:00 に実行される想定。
+未投稿のうち最も古いエントリを1件、Instagramに投稿する。
+
+v2の変更点:
+  - Graph APIのエラー本文をログに出す（原因特定のため）
+  - 「今日の日付」ではなく「未投稿で最古のもの」を投稿する
+    → GitHub Actions の cron 遅延で日付をまたいでも取りこぼさない
+  - 直近12時間以内に投稿済みなら何もしない（cron重複実行の二重投稿防止）
+  - 投稿前に画像URLの到達性をチェックする
 
 必要な環境変数:
-  META_ACCESS_TOKEN  長期アクセストークン
-  IG_USER_ID_JA      日本語アカウントのIGビジネスアカウントID
-  IG_USER_ID_EN      英語アカウントのIGビジネスアカウントID
-  IMAGE_BASE_URL     生成画像の公開URLベース
-                     例: https://raw.githubusercontent.com/<user>/<repo>/main/output
-
-投稿済み管理: content/posted.json に {"2026-08-01_ja": "media_id", ...}
+  META_ACCESS_TOKEN / IG_USER_ID_JA / IG_USER_ID_EN / IMAGE_BASE_URL
 """
 import datetime
 import json
 import os
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
 GRAPH = "https://graph.facebook.com/v21.0"
 POSTED_PATH = "content/posted.json"
+QUEUE_PATH = "content/queue.json"
+MIN_HOURS_BETWEEN_POSTS = 12
+
+
+def _read_error(e):
+    """HTTPError から Graph API のエラー本文を取り出す"""
+    try:
+        body = e.read().decode("utf-8", "replace")
+    except Exception:
+        return str(e)
+    try:
+        err = json.loads(body).get("error", {})
+        parts = [
+            err.get("message"),
+            f"type={err.get('type')}",
+            f"code={err.get('code')}",
+            f"subcode={err.get('error_subcode')}",
+            err.get("error_user_msg"),
+        ]
+        return " | ".join(str(p) for p in parts if p and "None" not in str(p))
+    except Exception:
+        return body[:500]
 
 
 def api_post(path, params):
     data = urllib.parse.urlencode(params).encode()
     req = urllib.request.Request(f"{GRAPH}/{path}", data=data, method="POST")
-    with urllib.request.urlopen(req) as res:
-        return json.loads(res.read())
+    try:
+        with urllib.request.urlopen(req) as res:
+            return json.loads(res.read())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"POST {path} -> {_read_error(e)}") from None
 
 
 def api_get(path, params):
     qs = urllib.parse.urlencode(params)
-    with urllib.request.urlopen(f"{GRAPH}/{path}?{qs}") as res:
-        return json.loads(res.read())
+    try:
+        with urllib.request.urlopen(f"{GRAPH}/{path}?{qs}") as res:
+            return json.loads(res.read())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"GET {path} -> {_read_error(e)}") from None
+
+
+def check_image(url):
+    """画像URLが実際に取得できるか事前確認"""
+    req = urllib.request.Request(url, method="HEAD")
+    try:
+        with urllib.request.urlopen(req) as res:
+            ctype = res.headers.get("Content-Type", "")
+            size = res.headers.get("Content-Length", "?")
+            if "image" not in ctype:
+                raise RuntimeError(f"画像ではありません Content-Type={ctype}")
+            print(f"  image OK: {url} ({ctype}, {size} bytes)")
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"画像URLが取得できません HTTP {e.code}: {url}") from None
 
 
 def wait_ready(container_id, token, timeout=120):
-    """コンテナの処理完了を待つ（画像は通常すぐ、動画対応も見据えて）"""
     for _ in range(timeout // 5):
         st = api_get(container_id, {"fields": "status_code", "access_token": token})
         if st.get("status_code") == "FINISHED":
@@ -50,6 +92,7 @@ def wait_ready(container_id, token, timeout=120):
 
 
 def publish(ig_user_id, image_url, caption, token):
+    check_image(image_url)
     c = api_post(f"{ig_user_id}/media", {
         "image_url": image_url,
         "caption": caption,
@@ -57,7 +100,7 @@ def publish(ig_user_id, image_url, caption, token):
     })
     cid = c["id"]
     if not wait_ready(cid, token):
-        raise RuntimeError(f"container not ready: {cid}")
+        raise RuntimeError(f"コンテナの処理が完了しませんでした: {cid}")
     r = api_post(f"{ig_user_id}/media_publish", {
         "creation_id": cid,
         "access_token": token,
@@ -65,43 +108,65 @@ def publish(ig_user_id, image_url, caption, token):
     return r["id"]
 
 
+def load_json(path, default):
+    if not os.path.exists(path):
+        return default
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def main():
     token = os.environ["META_ACCESS_TOKEN"]
     base = os.environ["IMAGE_BASE_URL"].rstrip("/")
     ig_ids = {"ja": os.environ["IG_USER_ID_JA"], "en": os.environ["IG_USER_ID_EN"]}
 
-    # JSTの今日
-    today = (datetime.datetime.now(datetime.timezone.utc)
-             + datetime.timedelta(hours=9)).strftime("%Y-%m-%d")
+    now = datetime.datetime.now(datetime.timezone.utc)
+    today = (now + datetime.timedelta(hours=9)).strftime("%Y-%m-%d")  # JST
 
-    with open("content/queue.json", encoding="utf-8") as f:
-        queue = json.load(f)
-    posted = {}
-    if os.path.exists(POSTED_PATH):
-        with open(POSTED_PATH, encoding="utf-8") as f:
-            posted = json.load(f)
+    queue = load_json(QUEUE_PATH, [])
+    posted = load_json(POSTED_PATH, {})
 
-    entry = next((e for e in queue if e["date"] == today), None)
-    if entry is None:
-        print(f"no entry for {today} — queue が切れています。補充してください。")
+    # 二重投稿ガード
+    last = posted.get("_last_post_at")
+    if last:
+        elapsed = (now - datetime.datetime.fromisoformat(last)).total_seconds() / 3600
+        if elapsed < MIN_HOURS_BETWEEN_POSTS:
+            print(f"skip: {elapsed:.1f}時間前に投稿済み（{MIN_HOURS_BETWEEN_POSTS}時間以内）")
+            return
+
+    # 未投稿で最古のエントリ（今日以前のもの）を選ぶ
+    target = None
+    for e in sorted(queue, key=lambda x: x["date"]):
+        if e["date"] > today:
+            break
+        if not all(f"{e['date']}_{l}" in posted for l in ("ja", "en") if l in e):
+            target = e
+            break
+
+    if target is None:
+        print(f"投稿対象なし（today={today}）。queueが尽きた可能性があります。")
         return
+
+    if target["date"] != today:
+        print(f"※ {target['date']} の未投稿分を追いつき投稿します（today={today}）")
 
     failed = False
     for lang in ("ja", "en"):
-        key = f"{today}_{lang}"
+        if lang not in target:
+            continue
+        key = f"{target['date']}_{lang}"
         if key in posted:
             print("already posted:", key)
             continue
-        if lang not in entry:
-            continue
-        image_url = f"{base}/{today}_{lang}.png"
+        image_url = f"{base}/{target['date']}_{lang}.png"
         try:
-            media_id = publish(ig_ids[lang], image_url, entry[lang]["caption"], token)
+            media_id = publish(ig_ids[lang], image_url, target[lang]["caption"], token)
             posted[key] = media_id
+            posted["_last_post_at"] = now.isoformat()
             print("posted:", key, media_id)
-        except Exception as e:
+        except Exception as ex:
             failed = True
-            print(f"FAILED {key}: {e}", file=sys.stderr)
+            print(f"FAILED {key}: {ex}", file=sys.stderr)
 
     with open(POSTED_PATH, "w", encoding="utf-8") as f:
         json.dump(posted, f, ensure_ascii=False, indent=2)
