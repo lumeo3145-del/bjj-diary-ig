@@ -24,15 +24,21 @@ GI_WHITE   = (241, 237, 227)
 BELT_BLACK = (11, 11, 13)
 RANK_RED   = (178, 35, 53)
 FADE       = (168, 177, 196)
+PT_WHITE   = (206, 205, 200)  # PTブロックの見出し（ENより一段控えめ）
+PT_FADE    = (132, 142, 162)  # PTブロックのサブ
 
 HANDLES = {"ja": "@bjj.diary.jp", "en": "@bjj.diary"}
 
+# EN card は英語 ｜ ポルトガル語 のバイリンガル eyebrow
 EYEBROWS = {
-    "tips":    {"ja": ("TRAINING TIPS", "BJJ DIARY"), "en": ("TRAINING TIPS", "BJJ DIARY")},
-    "quote":   {"ja": ("ON THE MATS", "今日の一言"), "en": ("ON THE MATS", "BJJ DIARY")},
-    "feature": {"ja": ("WHY BJJ DIARY", "アプリのこと"), "en": ("WHY BJJ DIARY", "THE APP")},
-    "trivia":  {"ja": ("BJJ TRIVIA", "柔術豆知識"), "en": ("BJJ TRIVIA", "BJJ DIARY")},
+    "tips":    {"ja": ("TRAINING TIPS", "BJJ DIARY"), "en": ("TRAINING TIPS", "DICAS DE TREINO")},
+    "quote":   {"ja": ("ON THE MATS", "今日の一言"), "en": ("ON THE MATS", "NO TATAME")},
+    "feature": {"ja": ("WHY BJJ DIARY", "アプリのこと"), "en": ("WHY BJJ DIARY", "SOBRE O APP")},
 }
+
+# PT の見出し・サブは EN のこの比率で描画（違和感なく控えめに）
+PT_HEAD_RATIO = 0.65
+PT_SUB_RATIO  = 0.85
 
 
 def find_font(patterns):
@@ -107,6 +113,78 @@ def fit_size(d, lines, path, start, min_size, max_w):
     return min_size
 
 
+def text_item(d, lines, path, start, min_size, max_w, fill, gap, lh_ratio=1.3):
+    return {
+        "kind": "text",
+        "lines": lines,
+        "path": path,
+        "size": fit_size(d, lines, path, start, min_size, max_w),
+        "fill": fill,
+        "gap": gap,
+        "lh_ratio": lh_ratio,
+    }
+
+
+def rule_item(color, gap, width=64, thickness=4):
+    return {"kind": "rule", "color": color, "gap": gap, "width": width, "thickness": thickness}
+
+
+def draw_stack(d, items, x, top, bottom, align="center", scale=1.0):
+    """items を top〜bottom に積む。収まらなければ全体を段階的に縮小
+    align="top" は端末画像を避けたいモックアップ用（下ほど画像が張り出すため）"""
+    def measure(s):
+        h = 0
+        for it in items:
+            h += int(it["gap"] * s)
+            if it["kind"] == "text":
+                h += len(it["lines"]) * int(it["size"] * s * it["lh_ratio"])
+            else:
+                h += it["thickness"] + 10
+        return h
+
+    while measure(scale) > bottom - top and scale > 0.6:
+        scale -= 0.05
+
+    y = top if align == "top" else max(top, (top + bottom - measure(scale)) // 2)
+    for it in items:
+        y += int(it["gap"] * scale)
+        if it["kind"] == "text":
+            size = max(int(it["size"] * scale), 20)
+            lh = int(size * it["lh_ratio"])
+            y = multiline(d, it["lines"], font(it["path"], size), x, y, it["fill"], lh)
+        else:
+            d.rectangle([x, y, x + it["width"], y + it["thickness"]], fill=it["color"])
+            y += it["thickness"] + 10
+    return y
+
+
+def build_stack(d, data, ctype, head_path, head_start, max_w,
+                head_fill, sub_fill, pt_head_fill, pt_sub_fill, rule_color, sub_size):
+    """EN見出し／サブ → 区切り → PT見出し／サブ の順に積む"""
+    headline = data["headline"]
+    sub = data.get("sub", [])
+    head_min = 44 if ctype != "quote" else 48
+
+    items = [text_item(d, headline, head_path, head_start, head_min, max_w, head_fill, 0)]
+    if sub:
+        items.append(text_item(d, sub, SANS_REG, sub_size, 24, max_w, sub_fill,
+                               55, lh_ratio=1.5))
+
+    head_size = items[0]["size"]
+    pt_head = data.get("headline_pt", [])
+    pt_sub = data.get("sub_pt", [])
+    if pt_head or pt_sub:
+        items.append(rule_item(rule_color, 62))
+        if pt_head:
+            items.append(text_item(d, pt_head, head_path,
+                                   int(head_size * PT_HEAD_RATIO), 34, max_w,
+                                   pt_head_fill, 34))
+        if pt_sub:
+            items.append(text_item(d, pt_sub, SANS_REG, int(sub_size * PT_SUB_RATIO),
+                                   22, max_w, pt_sub_fill, 34, lh_ratio=1.5))
+    return items
+
+
 def render(entry, lang):
     data = entry[lang]
     ctype = entry.get("type", "tips")
@@ -118,22 +196,13 @@ def render(entry, lang):
     en, jp = EYEBROWS.get(ctype, EYEBROWS["tips"])[lang]
     eyebrow(d, en, jp)
 
-    headline = data["headline"]
-    sub = data.get("sub", [])
-
-    if ctype == "quote":
-        size = fit_size(d, headline, SERIF_BLK, 100, 56, W - 160)
-        f_head = font(SERIF_BLK, size)
-    else:
-        size = fit_size(d, headline, SANS_BLACK, 112, 56, W - 160)
-        f_head = font(SANS_BLACK, size)
-
-    lh = int(size * 1.3)
-    block_h = len(headline) * lh + (len(sub) * 60 + 55 if sub else 0)
-    y0 = max(230, (170 + (H - 150) - block_h) // 2)  # eyebrow下〜帯上で概ね中央
-    y = multiline(d, headline, f_head, 80, y0, GI_WHITE, lh)
-    if sub:
-        multiline(d, sub, font(SANS_REG, 38), 80, y + 55, FADE, 58)
+    head_path = SERIF_BLK if ctype == "quote" else SANS_BLACK
+    items = build_stack(
+        d, data, ctype, head_path, 100 if ctype == "quote" else 112, W - 160,
+        head_fill=GI_WHITE, sub_fill=FADE, pt_head_fill=PT_WHITE, pt_sub_fill=PT_FADE,
+        rule_color=RANK_RED, sub_size=38,
+    )
+    draw_stack(d, items, 80, 230, H - 190)
 
     belt_bar(d, HANDLES[lang])
     out = f"output/{entry['date']}_{lang}.png"
@@ -166,6 +235,7 @@ RULE_GRAY  = (215, 211, 204)
 MARGIN_RED = (234, 92, 78)
 INK        = (58, 50, 44)
 INK_SOFT   = (135, 126, 117)
+INK_FAINT  = (165, 157, 148)  # クリーム面のPTサブ
 
 ASSET_STYLE = {
     "tilt_ja_journal": dict(height=1150, cx=810, cy=560, rotate=0),
@@ -214,13 +284,18 @@ def render_mockup(entry, lang):
     img = notebook_bg()
     img = paste_phone(img, asset, style)
     d = ImageDraw.Draw(img)
-    d.text((170, 130), "WHY BJJ DIARY", font=font(SANS_MED, 30), fill=MARGIN_RED)
+    eb = "WHY BJJ DIARY" if lang == "ja" else "WHY BJJ DIARY ｜ SOBRE O APP"
+    f_eb = font(SANS_MED, 30 if lang == "ja" else 26)
+    d.text((170, 130), eb, font=f_eb, fill=MARGIN_RED)
     d.rectangle([170, 188, 234, 193], fill=MARGIN_RED)
-    size = fit_size(d, data["headline"], SANS_BLACK, 92, 56, 420)
-    lh = int(size * 1.32)
-    y = multiline(d, data["headline"], font(SANS_BLACK, size), 170, 300, INK, lh)
-    if data.get("sub"):
-        multiline(d, data["sub"], font(SANS_REG, 35), 170, y + 50, INK_SOFT, 54)
+    # 端末画像の張り出し量に合わせてテキスト幅を決める（tiltは大きく傾き左に食い込む）
+    max_w = 385 if lang == "en" else (400 if asset.startswith("tilt") else 420)
+    items = build_stack(
+        d, data, "mockup", SANS_BLACK, 92, max_w,
+        head_fill=INK, sub_fill=INK_SOFT, pt_head_fill=INK_SOFT, pt_sub_fill=INK_FAINT,
+        rule_color=MARGIN_RED, sub_size=35,
+    )
+    draw_stack(d, items, 170, 290, H - 200, align="top")
     belt_bar_cream(d, HANDLES[lang])
     out = f"output/{entry['date']}_{lang}.png"
     img.save(out)

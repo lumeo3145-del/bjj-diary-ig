@@ -16,13 +16,13 @@ Instagram投稿用のコンテンツを {{開始日 YYYY-MM-DD}} から14日分�
 - アプリ名は日英どちらも「BJJ Diary」。「柔術日記」という旧名称は一切使わない
 
 ## テーマ配分（14日中）
-- mockup x8 — アプリ画面を使った広告投稿（メイン）。各言語の "image" フィールドにアセット名を指定:
+- mockup x9 — アプリ画面を使った広告投稿（メイン）。各言語の "image" フィールドにアセット名を指定:
   - ja: tilt_ja_journal(日記カレンダー) / tilt_ja_drills(打ち込みリスト) / mock_ja_stats(統計) / mock_ja_notes(メモ) / mock_ja_comp(試合記録)
   - en: mock_en_stats(Stats) / mock_en_notes(Notes) / mock_en_comp(Competition Records)
   - コピーは指定した画面の内容に合わせること。同じ画面の再利用OK、ただしコピーは毎回変える
-- tips x4 — 練習・上達に関する実践的アドバイス（記録の効用と絡められると尚良い）
+- tips x3 — 練習・上達に関する実践的アドバイス（記録の効用と絡められると尚良い）
 - quote x2 — 柔術の格言や名言（実在の人物の発言は出典が確実なもののみ。不確かなら「柔術の格言」とする）
-- trivia は使わない
+- trivia（柔術豆知識）は今後一切使わない。その分をアプリ紹介(mockup)に回す
 - mockupが3日以上連続しないよう、tips/quoteを間に挟む
 
 ## 出力形式
@@ -42,19 +42,29 @@ mockupのみ ja/en それぞれに "image" フィールドを含める。
   "en": {
     "image": "mock_en_stats",             // mockupのみ
     "headline": ["line 1", "line 2"],     // 1行18文字以内、最大3行（mockupは1行12文字以内推奨）
+    "headline_pt": ["linha 1", "linha 2"],// ポルトガル語(ブラジル)の見出し。英語より1〜2割短めに
     "sub": ["..."],
-    "caption": "body\n\n#hashtags..."
+    "sub_pt": ["..."],                    // ポルトガル語のサブ。1行30文字以内（mockupは1行28文字以内）
+    "caption": "body\n\ncorpo em português\n\n#hashtags..."
   }
 }
 ```
 
+## ポルトガル語（ブラジル）について
+- ENカードは「英語ブロック → 区切り線 → PTブロック」の2言語構成で描画される
+- 英語の直訳ではなく、ブラジルの柔術で普通に使う言い回しにする（tatame / rola / faixa / finalização / professor など）
+- PTは英語より小さく描画されるので、行が長すぎると読めない。英語より短めを意識する
+- ja カードにPTは入れない
+
 ## キャプションのルール
 - ja: 2〜3文。mockup投稿は文末に「App Storeで無料配信中 – プロフィールのリンクから」を入れる
 - en: 2〜3文。mockup投稿は文末に「Free on the App Store – Link in bio」を入れる
+- enのcaptionは「英語本文 → 空行 → ポルトガル語本文 → 空行 → ハッシュタグ」の順にする
+  - PT側のmockup投稿は文末に「Grátis na App Store – link na bio」を入れる
 - ハッシュタグは以下の固定セットをそのまま使う（追加・変更しない）:
   - ja: `#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技`
-  - en: `#bjj #grappling #jiujitsu #gi #nogi`
-- 日英は直訳ではなく、それぞれの文化圏で自然な表現にする
+  - en: `#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil`
+- 日英PTは直訳ではなく、それぞれの文化圏で自然な表現にする
 - 誇張・医学的断定・他アプリの批判はしない。アプリに存在しない機能に言及しない
 
 ## 過去の投稿（重複を避けること。mockupのコピー被りも避ける）

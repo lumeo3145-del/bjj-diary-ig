@@ -11,8 +11,10 @@
     "en": {
       "image": "mock_en_stats",
       "headline": ["Watch", "yourself", "improve."],
+      "headline_pt": ["Veja sua", "evolução."],
       "sub": ["Training days, comps,", "podium rate — logged."],
-      "caption": "BJJ Diary turns your training into data: sessions per month, competition results, podium rate. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Treinos, campeonatos,", "taxa de pódio — tudo registrado."],
+      "caption": "BJJ Diary turns your training into data: sessions per month, competition results, podium rate. Free on the App Store – Link in bio\n\nO BJJ Diary transforma seu treino em dados: treinos por mês, resultados de campeonato e taxa de pódio. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -25,8 +27,10 @@
     },
     "en": {
       "headline": ["Reps over", "variety."],
+      "headline_pt": ["Repetição,", "não variedade."],
       "sub": ["Sharpen your A-game before adding moves.", "One reliable attack wins matches."],
-      "caption": "Collecting techniques feels good. Drilling one until it works on everyone wins matches.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Afie seu jogo antes de aprender golpe novo.", "Um golpe confiável ganha luta."],
+      "caption": "Collecting techniques feels good. Drilling one until it works on everyone wins matches.\n\nColecionar técnica é gostoso. Treinar uma só até ela funcionar em todo mundo é o que ganha luta.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -41,8 +45,10 @@
     "en": {
       "image": "mock_en_notes",
       "headline": ["Open. Write.", "3 seconds flat."],
+      "headline_pt": ["Abra. Escreva.", "3 segundos."],
       "sub": ["No login. No email. No friction.", "Capture it before it fades."],
-      "caption": "BJJ Diary needs no account. Open the app and start writing before you've even changed out of your gi. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Sem login. Sem e-mail. Sem fricção.", "Registre antes de esquecer."],
+      "caption": "BJJ Diary needs no account. Open the app and start writing before you've even changed out of your gi. Free on the App Store – Link in bio\n\nO BJJ Diary não pede cadastro. Abra o app e comece a escrever antes mesmo de tirar o kimono. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -57,8 +63,10 @@
     "en": {
       "image": "mock_en_comp",
       "headline": ["Every match,", "remembered."],
+      "headline_pt": ["Cada luta,", "registrada."],
       "sub": ["Belt, division, result —", "your comp history in one place."],
-      "caption": "From your first blue belt match to your latest podium — BJJ Diary keeps your full competition history organized. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Faixa, categoria, resultado —", "seu histórico em um só lugar."],
+      "caption": "From your first blue belt match to your latest podium — BJJ Diary keeps your full competition history organized. Free on the App Store – Link in bio\n\nDa sua primeira luta de faixa-azul ao último pódio — o BJJ Diary mantém todo o seu histórico de campeonatos organizado. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -71,8 +79,10 @@
     },
     "en": {
       "headline": ["3 lines after", "every roll."],
+      "headline_pt": ["3 linhas depois", "de cada treino."],
       "sub": ["What worked, what got you, what's next.", "That's all it takes."],
-      "caption": "Don't overthink your training log. What worked, what caught you, what to fix — three lines change next week's session.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["O que funcionou, o que te pegou, o que treinar.", "É só isso."],
+      "caption": "Don't overthink your training log. What worked, what caught you, what to fix — three lines change next week's session.\n\nNão complique seu diário de treino. O que funcionou, o que te pegou, o que corrigir — três linhas mudam o treino da semana que vem.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -87,8 +97,10 @@
     "en": {
       "image": "mock_en_notes",
       "headline": ["Technique tips,", "question lists,", "gear notes."],
+      "headline_pt": ["Técnicas,", "dúvidas,", "equipamento."],
       "sub": ["Everything BJJ,", "in one place."],
-      "caption": "Triangle details, questions for your coach, gear to buy — keep every BJJ note in BJJ Diary. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Tudo de jiu-jitsu", "em um só lugar."],
+      "caption": "Triangle details, questions for your coach, gear to buy — keep every BJJ note in BJJ Diary. Free on the App Store – Link in bio\n\nDetalhe do triângulo, dúvida para o professor, kimono para comprar — guarde toda anotação de jiu-jitsu no BJJ Diary. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -103,8 +115,10 @@
     "en": {
       "image": "mock_en_stats",
       "headline": ["See your", "training", "add up."],
+      "headline_pt": ["Veja o treino", "somar."],
       "sub": ["Monthly sessions at a glance.", "Consistency you can see."],
-      "caption": "Nine sessions in March. Seven in May. BJJ Diary shows your consistency month by month — and consistency is everything. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Treinos do mês num relance.", "Constância que dá para ver."],
+      "caption": "Nine sessions in March. Seven in May. BJJ Diary shows your consistency month by month — and consistency is everything. Free on the App Store – Link in bio\n\nNove treinos em março. Sete em maio. O BJJ Diary mostra sua constância mês a mês — e constância é tudo. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -116,9 +130,10 @@
       "caption": "負けたスパーほど、学びは多い。今日の一本を明日の糧に。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
     },
     "en": {
-      "headline": ["\u201cYou win, or", "you learn.\u201d"],
+      "headline": ["“You win, or", "you learn.”"],
+      "headline_pt": ["“Ou você vence,", "ou você aprende.”"],
       "sub": ["— Carlos Gracie Jr."],
-      "caption": "There is no losing on the mats. Every tap teaches something.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "caption": "There is no losing on the mats. Every tap teaches something.\n\nNo tatame não existe derrota. Cada tap ensina alguma coisa.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -133,8 +148,10 @@
     "en": {
       "image": "mock_en_comp",
       "headline": ["Your comp", "career,", "organized."],
+      "headline_pt": ["Sua carreira", "competitiva,", "organizada."],
       "sub": ["Filter by belt, division, weight.", "Every result at your fingertips."],
-      "caption": "Which division did you win at blue belt? BJJ Diary answers instantly — filter your full competition history by belt, category, and weight. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Filtre por faixa, categoria e peso.", "Todo resultado na palma da mão."],
+      "caption": "Which division did you win at blue belt? BJJ Diary answers instantly — filter your full competition history by belt, category, and weight. Free on the App Store – Link in bio\n\nEm qual categoria você venceu de faixa-azul? O BJJ Diary responde na hora — filtre seu histórico por faixa, categoria e peso. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -147,8 +164,10 @@
     },
     "en": {
       "headline": ["Escapes first,", "submissions later."],
+      "headline_pt": ["Primeiro a fuga,", "depois a finalização."],
       "sub": ["Good defense means no panic.", "Safety is what lets you attack."],
-      "caption": "Learn to escape before you learn to finish. When bad positions stop scaring you, you start taking real risks.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Boa defesa é não entrar em pânico.", "Segurança é o que libera o ataque."],
+      "caption": "Learn to escape before you learn to finish. When bad positions stop scaring you, you start taking real risks.\n\nAprenda a escapar antes de aprender a finalizar. Quando a posição ruim deixa de assustar, você começa a arriscar de verdade.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -163,8 +182,10 @@
     "en": {
       "image": "mock_en_notes",
       "headline": ["Notes that", "survive the", "drive home."],
-      "sub": ["That detail your coach showed you?", "Still there tomorrow."],
-      "caption": "The detail your coach showed you tonight will be gone by morning — unless you write it down. BJJ Diary keeps it. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "headline_pt": ["Anotação que", "sobrevive ao", "caminho de casa."],
+      "sub": ["The detail your coach gave you?", "Still there tomorrow."],
+      "sub_pt": ["Aquele detalhe do professor?", "Continua lá amanhã."],
+      "caption": "The detail your coach showed you tonight will be gone by morning — unless you write it down. BJJ Diary keeps it. Free on the App Store – Link in bio\n\nO detalhe que o professor mostrou hoje some até amanhã de manhã — a não ser que você anote. O BJJ Diary guarda. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -179,8 +200,10 @@
     "en": {
       "image": "mock_en_stats",
       "headline": ["Podium rate:", "calculated", "for you."],
+      "headline_pt": ["Taxa de pódio:", "calculada", "para você."],
       "sub": ["Log your results.", "BJJ Diary does the math."],
-      "caption": "Enter your comp results and BJJ Diary handles the rest — entries, medals, podium rate. Goal-setting gets a lot easier with numbers. Free on the App Store – Link in bio\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Registre seus resultados.", "O BJJ Diary faz as contas."],
+      "caption": "Enter your comp results and BJJ Diary handles the rest — entries, medals, podium rate. Goal-setting gets a lot easier with numbers. Free on the App Store – Link in bio\n\nRegistre os resultados e o BJJ Diary faz o resto — inscrições, medalhas, taxa de pódio. Definir meta fica bem mais fácil com números. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -193,8 +216,10 @@
     },
     "en": {
       "headline": ["Ask your coach", "today, not later."],
+      "headline_pt": ["Pergunte ao professor", "hoje, não depois."],
       "sub": ["Note your questions mid-session.", "Curious grapplers improve fastest."],
-      "caption": "\u201cWhy did that escape work on me?\u201d is your best study material. Write it down and ask your coach next session.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["Anote suas dúvidas durante o treino.", "Quem pergunta evolui mais rápido."],
+      "caption": "“Why did that escape work on me?” is your best study material. Write it down and ask your coach next session.\n\n“Por que aquela fuga funcionou em mim?” é o melhor material de estudo que existe. Anote e pergunte ao professor no próximo treino.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   },
   {
@@ -206,9 +231,253 @@
       "caption": "練習した分だけ、スパーに出る。ごまかしが効かないから、柔術は面白い。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
     },
     "en": {
-      "headline": ["\u201cThe mat", "doesn't lie.\u201d"],
+      "headline": ["“The mat", "doesn't lie.”"],
+      "headline_pt": ["“O tatame", "não mente.”"],
       "sub": ["— BJJ proverb"],
-      "caption": "Your rolls show exactly how you've trained. No shortcuts, no faking it — that's the beauty of jiu-jitsu.\n\n#bjj #grappling #jiujitsu #gi #nogi"
+      "sub_pt": ["— Provérbio do jiu-jitsu"],
+      "caption": "Your rolls show exactly how you've trained. No shortcuts, no faking it — that's the beauty of jiu-jitsu.\n\nSeu rola mostra exatamente como você treinou. Sem atalho, sem enrolação — é essa a beleza do jiu-jitsu.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-03",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_notes",
+      "headline": ["先生の一言を、", "そのまま。"],
+      "sub": ["聞いたコツをメモに保存。", "帰り道で忘れない。"],
+      "caption": "「腰を落として」の一言は、家に着く頃には消えています。BJJ Diaryのメモに残せば、次の練習でちゃんと使えます。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["Your coach's", "words, saved."],
+      "headline_pt": ["A palavra do", "professor, salva."],
+      "sub": ["One tap, one note.", "Ready for next class."],
+      "sub_pt": ["Um toque, uma anotação.", "Pronta para o próximo treino."],
+      "caption": "That one detail your coach gave you tonight is gone by the time you park the car. Put it in BJJ Diary and it's there next class. Free on the App Store – Link in bio\n\nAquele detalhe que o professor te deu hoje some antes de você estacionar o carro. Coloque no BJJ Diary e ele estará lá no próximo treino. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-04",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_journal",
+      "headline": ["白いカレンダーを、", "埋めていく。"],
+      "sub": ["行った日には色がつく。", "続けるのが楽しくなる。"],
+      "caption": "練習した日はカレンダーに色がつきます。埋まっていくのを眺めるのが、次に道場へ行く理由になります。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_stats",
+      "headline": ["Numbers don't", "sugarcoat."],
+      "headline_pt": ["Os números não", "adoçam nada."],
+      "sub": ["Sessions, medals, podium rate.", "Your honest scoreboard."],
+      "sub_pt": ["Treinos, medalhas, taxa de pódio.", "Seu placar honesto."],
+      "caption": "Your memory flatters you. Your log doesn't. BJJ Diary shows the months you trained hard and the ones you didn't. Free on the App Store – Link in bio\n\nSua memória te elogia. Seu registro não. O BJJ Diary mostra os meses em que você treinou firme e os que você não treinou. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-05",
+    "type": "tips",
+    "ja": {
+      "headline": ["同じ形で、", "二度負けない。"],
+      "sub": ["やられた形を書き出すと、", "パターンが見えてきます。"],
+      "caption": "毎回同じ形でパスされていませんか。記録すると、それが偶然ではなくパターンだと気づけます。気づいた時点で半分は解決です。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["Don't lose the", "same way twice."],
+      "headline_pt": ["Não perca duas", "vezes do mesmo jeito."],
+      "sub": ["Write down how you got caught.", "The pattern shows up fast."],
+      "sub_pt": ["Anote como te pegaram.", "O padrão aparece rápido."],
+      "caption": "Getting passed the same way every week? Write it down and it stops being bad luck and starts being a pattern — and patterns can be fixed.\n\nEstá sendo passado do mesmo jeito toda semana? Anote e aquilo deixa de ser azar e vira padrão — e padrão a gente corrige.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-06",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_comp",
+      "headline": ["あの日の一本を、", "忘れない。"],
+      "sub": ["試合ごとに結果とメモ。", "戦歴が財産になる。"],
+      "caption": "勝った試合も負けた試合も、記録すれば次の課題になります。BJJ Diaryなら帯・階級・結果まで残せます。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_comp",
+      "headline": ["Medals fade.", "Records don't."],
+      "headline_pt": ["Medalha some.", "Registro não."],
+      "sub": ["Every bracket, every result,", "kept for good."],
+      "sub_pt": ["Cada chave, cada resultado,", "guardado para sempre."],
+      "caption": "Try to remember what happened at that tournament two years ago. BJJ Diary remembers the belt, the division and the result. Free on the App Store – Link in bio\n\nTente lembrar o que aconteceu naquele campeonato de dois anos atrás. O BJJ Diary lembra: faixa, categoria e resultado. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-07",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_drills",
+      "headline": ["やる技を、", "決めてから", "マットへ。"],
+      "sub": ["打ち込みリストがあれば、", "迷う時間はゼロ。"],
+      "caption": "「今日は何を練習しよう」で5分溶かすのはもったいない。BJJ Diaryの打ち込みリストに並べておけば、着替えた瞬間から動けます。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["A question list", "for your coach."],
+      "headline_pt": ["Uma lista de", "dúvidas para o", "professor."],
+      "sub": ["Jot it mid-class.", "Ask before you leave."],
+      "sub_pt": ["Anote no meio do treino.", "Pergunte antes de sair."],
+      "caption": "The question you forget to ask is the one you needed most. Keep a running list in BJJ Diary and clear it every class. Free on the App Store – Link in bio\n\nA pergunta que você esquece de fazer é justamente a que mais importava. Mantenha a lista no BJJ Diary e limpe ela a cada treino. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-08",
+    "type": "quote",
+    "ja": {
+      "headline": ["「黒帯は、", "諦めなかった", "白帯だ」"],
+      "sub": ["— 柔術の格言"],
+      "caption": "才能より、通い続けること。何年か経った時にマットに残っているのは、辞めなかった人だけです。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["“A black belt is", "a white belt", "who never quit.”"],
+      "headline_pt": ["“Faixa-preta é o", "faixa-branca que", "nunca desistiu.”"],
+      "sub": ["— BJJ proverb"],
+      "sub_pt": ["— Provérbio do jiu-jitsu"],
+      "caption": "Talent gets talked about. Showing up gets belts. The people still on the mats in five years are the ones who simply never stopped.\n\nTalento todo mundo comenta. Quem aparece no treino é quem sobe de faixa. Daqui a cinco anos, no tatame vão estar os que simplesmente não pararam.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-09",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_stats",
+      "headline": ["今月、何回", "行った?"],
+      "sub": ["月ごとの練習日数を、", "グラフで表示。"],
+      "caption": "「最近サボってるかも」を数字で確認できます。月別の練習日数が出るので、ペースが落ちた月もすぐわかります。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_stats",
+      "headline": ["How many", "sessions", "this month?"],
+      "headline_pt": ["Quantos treinos", "neste mês?"],
+      "sub": ["Monthly totals, charted.", "No more guessing."],
+      "sub_pt": ["Total mensal em gráfico.", "Chega de achismo."],
+      "caption": "“I've been training a lot lately” is a feeling. BJJ Diary turns it into a number — and numbers keep you honest. Free on the App Store – Link in bio\n\n“Tenho treinado bastante” é sensação. O BJJ Diary transforma isso em número — e número não deixa você se enganar. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-10",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_notes",
+      "headline": ["買う物リストも、", "ここで。"],
+      "sub": ["道着もテープも、", "メモにまとめて。"],
+      "caption": "新しい道着、テープ、サプリ。柔術関連のメモを全部BJJ Diaryに集めておけば、探し回らずに済みます。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["Gear list,", "drill list,", "study list."],
+      "headline_pt": ["Lista de material,", "de drill,", "de estudo."],
+      "sub": ["All your BJJ notes,", "out of your camera roll."],
+      "sub_pt": ["Toda anotação de jiu-jitsu,", "fora da galeria de fotos."],
+      "caption": "Technique screenshots buried in your camera roll help nobody. Keep your BJJ notes where you'll actually find them. Free on the App Store – Link in bio\n\nPrint de técnica perdido na galeria não ajuda ninguém. Guarde suas anotações de jiu-jitsu onde você realmente vai achar. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-11",
+    "type": "tips",
+    "ja": {
+      "headline": ["週2回でも、", "止めなければ", "強くなる。"],
+      "sub": ["大事なのは1回の量より、", "続いている期間です。"],
+      "caption": "週5回を1ヶ月で燃え尽きるより、週2回を3年続ける方が確実に強くなります。記録を見返すと、その積み重ねが実感できます。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["Twice a week,", "for years."],
+      "headline_pt": ["Duas vezes por", "semana, por anos."],
+      "sub": ["Beats five a week for a month.", "Consistency compounds."],
+      "sub_pt": ["Melhor que cinco por semana num mês.", "Constância acumula."],
+      "caption": "Five sessions a week for one month, then burnout. Two a week for three years builds a real game. Look back at your log and you'll see which one you're doing.\n\nCinco treinos por semana durante um mês e depois o desânimo. Duas vezes por semana durante três anos constrói jogo de verdade. Olhe seu histórico e veja em qual dos dois você está.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-12",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_journal",
+      "headline": ["1年前の自分と、", "比べる。"],
+      "sub": ["日記を遡れば、", "伸びが見えてくる。"],
+      "caption": "強くなった実感がない日は、1年前の記録を読み返してください。当時の課題を、今は普通にこなせているはずです。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_comp",
+      "headline": ["Filter by belt.", "See the jump."],
+      "headline_pt": ["Filtre por faixa.", "Veja o salto."],
+      "sub": ["Your results at each rank,", "side by side."],
+      "sub_pt": ["Seus resultados em cada", "graduação, lado a lado."],
+      "caption": "Compare how you did at blue with how you're doing at purple. BJJ Diary filters your record by belt, so the progress is impossible to miss. Free on the App Store – Link in bio\n\nCompare como você foi de azul com como está indo de roxa. O BJJ Diary filtra seu histórico por faixa e a evolução fica impossível de não ver. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-13",
+    "type": "mockup",
+    "ja": {
+      "image": "mock_ja_comp",
+      "headline": ["次の試合の", "準備を、", "今日から。"],
+      "sub": ["前回の反省をすぐ確認。", "同じ失敗をしない。"],
+      "caption": "試合が決まったら、まず前回の記録を読み返す。反省が残っていれば、そこから準備を始められます。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_stats",
+      "headline": ["Set a goal", "you can", "measure."],
+      "headline_pt": ["Defina uma meta", "que dá para medir."],
+      "sub": ["Sessions per month, podium rate.", "Numbers make goals real."],
+      "sub_pt": ["Treinos por mês, taxa de pódio.", "Número deixa a meta real."],
+      "caption": "“Train more” is not a goal. “Twelve sessions this month” is. BJJ Diary keeps the count so you always know where you stand. Free on the App Store – Link in bio\n\n“Treinar mais” não é meta. “Doze treinos esse mês” é. O BJJ Diary faz a conta para você sempre saber onde está. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-14",
+    "type": "tips",
+    "ja": {
+      "headline": ["スパーは、", "テーマを1つ", "決めてから。"],
+      "sub": ["「今日は下からだけ」でいい。", "狙いがある人が伸びます。"],
+      "caption": "全部よくしようとすると何も残りません。今日は下から、今日はパスだけ。テーマを決めて、終わったらメモする。それだけで変わります。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["One theme", "per roll."],
+      "headline_pt": ["Um tema", "por rola."],
+      "sub": ["“Only from bottom today.”", "Aimless rolls teach little."],
+      "sub_pt": ["“Hoje só por baixo.”", "Rola sem objetivo ensina pouco."],
+      "caption": "Trying to fix everything in one roll fixes nothing. Pick one thing — guard retention, one pass, one grip — and write down what happened.\n\nTentar consertar tudo em um rola não conserta nada. Escolha uma coisa — recomposição de guarda, uma passagem, uma pegada — e anote o que aconteceu.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-15",
+    "type": "mockup",
+    "ja": {
+      "image": "tilt_ja_drills",
+      "headline": ["苦手を、", "リストの", "一番上に。"],
+      "sub": ["打ち込みリストで、", "やる順番まで決まる。"],
+      "caption": "苦手な技ほど後回しになります。打ち込みリストの一番上に置いておけば、必ず手をつけられます。App Storeで無料配信中 – プロフィールのリンクから"
+    },
+    "en": {
+      "image": "mock_en_notes",
+      "headline": ["Write it before", "you shower."],
+      "headline_pt": ["Anote antes", "do banho."],
+      "sub": ["Two minutes in the locker room.", "That's the whole habit."],
+      "sub_pt": ["Dois minutos no vestiário.", "O hábito é só isso."],
+      "caption": "The habit isn't journaling. It's two minutes in the changing room, before the details leave your head. BJJ Diary opens straight to a blank note. Free on the App Store – Link in bio\n\nO hábito não é escrever um diário. São dois minutos no vestiário, antes do detalhe sumir da cabeça. O BJJ Diary abre direto numa anotação em branco. Grátis na App Store – link na bio\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
+    }
+  },
+  {
+    "date": "2026-08-16",
+    "type": "quote",
+    "ja": {
+      "headline": ["「ポジション", "が先、", "極めは後」"],
+      "sub": ["— 柔術の格言"],
+      "caption": "焦って極めにいくと逃げられます。まず抑える、それから極める。順番を守れる人が強いです。\n\n#柔術 #ブラジリアン柔術 #BJJ #グラップリング #格闘技"
+    },
+    "en": {
+      "headline": ["“Position", "before", "submission.”"],
+      "headline_pt": ["“Posição antes", "da finalização.”"],
+      "sub": ["— BJJ proverb"],
+      "sub_pt": ["— Provérbio do jiu-jitsu"],
+      "caption": "Rush the finish and you lose the position. Control first, then attack — the order is the whole art.\n\nSe você corre para finalizar, perde a posição. Primeiro o controle, depois o ataque — a ordem é a arte inteira.\n\n#bjj #grappling #jiujitsu #gi #nogi #artesuave #jiujitsubrasil"
     }
   }
 ]
