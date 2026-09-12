@@ -62,8 +62,14 @@ GitHub Actions (月1) → アクセストークン自動更新
 
 ### 3. ローカル環境
 
+画像生成には Pillow が要る。このリポジトリでは `.venv/` を使う:
+
 ```bash
-pip install pillow
+python3 -m venv .venv          # 初回のみ
+./.venv/bin/pip install pillow
+# 以降 generate_cards.py は .venv の python で実行する
+# ./.venv/bin/python generate_cards.py
+
 # フォント (Ubuntu)
 sudo apt install fonts-noto-cjk fonts-noto-cjk-extra
 # macOS
@@ -76,9 +82,9 @@ brew install --cask font-noto-sans-cjk-jp font-noto-serif-cjk-jp
 2. `content/queue.json` に追記
 3. 画像生成と確認:
    ```bash
-   python3 generate_cards.py
+   ./.venv/bin/python generate_cards.py
    open output/   # 目視チェック。直したい日は queue.json を編集して
-   python3 generate_cards.py --only 2026-08-05   # 再生成
+   ./.venv/bin/python generate_cards.py --only 2026-08-05   # 再生成
    ```
 4. `git add . && git commit -m "content: 8月前半" && git push`
 
@@ -91,7 +97,8 @@ Actions タブ → daily-post → Run workflow
 
 ## トラブルシューティング
 
-- **queue が切れた**: 投稿はスキップされログに出るだけ。気づいたら補充
+- **queue が切れそう / 切れた**: 残り3日分以下になると `queue-low` ラベル付きの
+  Issue が自動で立つ（通知が飛ぶ）。補充して残量が戻れば自動でクローズされる
 - **トークン失効**: refresh-token ワークフローが月1で更新。失敗時は
   Graph API Explorer で再取得して Secret を手動更新
 - **投稿失敗**: Actions のログを確認。画像URLが404の場合は push 忘れ
@@ -108,6 +115,7 @@ Actions タブ → daily-post → Run workflow
 │   └── caption_prompt.md # コンテンツ生成プロンプト
 ├── generate_cards.py     # JSON → カード画像
 ├── post_to_instagram.py  # Graph API 投稿
+├── check_queue.py        # キュー残量チェック（少なければIssueで通知）
 ├── refresh_token.py      # トークン更新
 └── .github/workflows/
     ├── post.yml          # 毎日 21:00 JST

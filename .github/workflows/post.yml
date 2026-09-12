@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  issues: write # キュー残量の警告Issueを立てる
 
 concurrency:
   group: daily-post
@@ -62,3 +63,38 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update posted state (${{ steps.target.outputs.langs }}) [skip ci]"
           git pull --rebase --autostash || true
           git push
+
+      # queueが尽きても投稿スクリプトは正常終了するため、残量を別途チェックして通知する
+      - name: Check queue level
+        id: queue
+        if: always()
+        env:
+          QUEUE_WARN_DAYS: "3"
+        run: python3 check_queue.py
+
+      # Issueの重複判定はラベルで行う（日本語タイトルの全文検索は取りこぼすため）
+      - name: Notify if queue is low
+        if: always() && steps.queue.outputs.low == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create queue-low --color D93F0B --description "投稿キューの残量警告" --force
+          existing=$(gh issue list --state open --label queue-low --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            echo "既にIssue #$existing がオープン中。重複作成しません"
+            exit 0
+          fi
+          gh issue create \
+            --title "投稿キューの残りが ${{ steps.queue.outputs.remaining }}日分になりました" \
+            --label queue-low \
+            --body-file queue_alert.md
+
+      - name: Close notice when queue is refilled
+        if: always() && steps.queue.outputs.low == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create queue-low --color D93F0B --description "投稿キューの残量警告" --force
+          for n in $(gh issue list --state open --label queue-low --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "キューが補充されたため自動クローズします（残り ${{ steps.queue.outputs.remaining }}日分）"
+          done
