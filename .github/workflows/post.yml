@@ -94,7 +94,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh label create queue-low --color D93F0B --description "投稿キューの残量警告" --force
+          # ラベル未作成でも issue list は空を返すので、ここでは作らない
           for n in $(gh issue list --state open --label queue-low --json number --jq '.[].number'); do
             gh issue close "$n" --comment "キューが補充されたため自動クローズします（残り ${{ steps.queue.outputs.remaining }}日分）"
           done
